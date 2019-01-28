@@ -31,7 +31,9 @@ namespace TodoApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
         {
-            return await _context.TodoItems.ToListAsync();
+            //return await _context.TodoItems.ToListAsync();
+            JsonResult result = new JsonResult(User.Identity);
+            return result;
         }
 
         // GET: api/Todo/5
